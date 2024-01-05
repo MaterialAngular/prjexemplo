@@ -1,0 +1,25 @@
+<div class="container">
+  <mat-toolbar>
+      <span>Produto</span>
+  </mat-toolbar>
+</div>
+<div class="formulario-padrao">
+    <form [formGroup]="frmProduto" (ngSubmit)="OnSalvar()">
+      <div class="form-group">
+        <label>Descrição:</label>
+        <input type="text" formControlName="descricao" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label>Categoria:</label>
+        <select name="idcategoria" id="idcategoria" formControlName="idCategoria" >
+          <option [ngValue]="item" *ngFor="let item of categorias">{{item.descricao}}</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Salvar</button>
+      <button type="submit" class="btn btn-default ml-2">Cancelar</button>
+    </form>
+  
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,23 @@
+
+<div class="container">
+    <mat-toolbar>
+        <span>Categoria</span>
+    </mat-toolbar>
+</div>
+<div class="formulario-padrao">
+      <form [formGroup]="frmCategoria" (ngSubmit)="OnSalvarCategoria()">
+        <div class="form-group">
+          <label>Código</label>
+         <!-- <input type="text" formControlName="id" class="form-control"> -->
+        </div>
+        <div class="form-group">
+          <label>Descrição:</label>
+          <input type="text" formControlName="descricao" class="form-control">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        <button type="submit" class="btn btn-default ml-2">Cancelar</button>
+      </form>
+
+  </div>
+  <router-outlet></router-outlet>

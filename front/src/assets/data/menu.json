@@ -1,0 +1,36 @@
+[
+    {
+        "nome": "Home",
+        "redirect": "/dashboard"
+    },
+
+    {
+        "nome": "Usuários",
+        "redirect": "/dashboard/usuarios"
+    },
+
+    {
+        "nome": "Clientes",
+        "redirect": "/dashboard/clientes"
+    },
+
+    {
+      "nome": "Produtos",
+      "redirect": "/dashboard/produtos"
+    },
+
+    {
+        "nome": "Categorias",
+        "redirect": "/dashboard/categorias"
+    },
+
+    {
+      "nome": "Pedidos",
+      "redirect": "/dashboard/pedidos"
+    },
+
+    {
+      "nome": "Relatórios",
+      "redirect": "/dashboard/relatorios"
+    }
+]

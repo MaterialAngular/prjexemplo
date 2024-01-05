@@ -1,0 +1,41 @@
+<div class="container">
+    <mat-toolbar>
+      <span> Novo Usuário</span>
+    </mat-toolbar>
+
+    <form [formGroup]="frmNovoUsuario" (ngSubmit)="OnSalvarUsuario()">
+        <mat-grid-list cols="4" rowHeight="70px">
+            <mat-grid-tile [colspan]="1" [rowspan]="1">
+                <mat-form-field class="ancho">
+                    <mat-label>Usuário:</mat-label>
+                    <input matInput autocomplete="=off" formControlName="nomeusuario"> 
+                </mat-form-field>
+            </mat-grid-tile>
+            
+            <mat-grid-tile [colspan]="3" [rowspan]="4">
+                <img src="./assets/img/user.png">
+            </mat-grid-tile>
+
+            <mat-grid-tile [colspan]="1" [rowspan]="1">
+                <mat-form-field class="ancho">
+                    <mat-label>Login:</mat-label>
+                    <input matInput autocomplete="=off" formControlName="loginusuario"> 
+                </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile [colspan]="1" [rowspan]="1">
+                <mat-form-field class="ancho">
+                    <mat-label>Senha:</mat-label>
+                    <input matInput autocomplete="=off" formControlName="senhausuario"> 
+                </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile [colspan]="1" [rowspan]="1">
+                <button mat-raised-button style="margin-right: 20px;">Voltar</button>
+                <button type="submit" [disabled]="frmNovoUsuario.invalid" mat-raised-button color="primary">Salvar</button>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </form>
+</div>
+
+

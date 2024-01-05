@@ -1,0 +1,60 @@
+<div class="container">
+    <mat-toolbar>
+        <span>Pedidos</span>
+    </mat-toolbar>
+<!--</div>
+<div class="formulario-padrao"> -->
+    <h2>Cadastrar Pedido</h2>
+
+  <!--  <form (ngSubmit)="consultarPaciente()">
+      <label>Código do Paciente:</label>
+      <input type="text" id="idCliente" [(ngModel)]="idCliente" name="idCliente" required>
+      <input type="text" id="idCliente" formControlName="idCliente" name="idCliente" required class="form-control">
+      <button type="submit">Consultar</button>
+    </form> -->
+
+  <!--  <div *ngIf="this.idCliente">
+      <p>Nome do Paciente: {{ nome }}</p>
+    </div> -->
+
+      <form [formGroup]="frmPedido" (ngSubmit)="OnSalvar()">
+
+        <div class="form-group">
+          <label>Cliente:</label>
+          <input type="text" formControlName="idCliente" class="form-control" >
+        </div>
+
+        <!-- Adicione o botão de consulta -->
+      <!--  <div class="form-group">
+          <button type="button" class="btn btn-secondary" (click)="consultarCliente()">Pesquisar</button>
+        </div>  -->
+
+      <!--  <div class="form-group">
+          <label>Nome do Paciente:</label>
+          <input type="text" formControlName="nomeCliente" class="form-control">
+        </div>  -->
+
+        <div class="form-group">
+          <label>Categoria:</label>
+          <select name="idCategoria" id="idCategoria" formControlName="idCategoria" class="form-control">
+            <option [ngValue]="item" *ngFor="let item of categorias">{{item.descricao}}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Produto:</label>
+          <select name="idProduto" id="idProduto" formControlName="idProduto" class="form-control">
+            <option [ngValue]="item" *ngFor="let item of produtos">{{item.descricao}}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Quantidade:</label>
+          <input type="text" formControlName="quantidade" class="form-control">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Salvar</button>
+
+      </form>
+<!--  </div>  -->
+  <router-outlet></router-outlet>

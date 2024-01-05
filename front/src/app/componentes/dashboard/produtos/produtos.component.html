@@ -1,0 +1,62 @@
+<div class="container">
+  <mat-toolbar>
+      <span>Manutenção de Produtos</span>
+      <div class="example-spacer"></div>
+      <button mat-raised-button color="primary" routerLink="/dashboard/novoproduto">Novo</button>
+  </mat-toolbar>
+
+  <div *ngIf="listProdutos.length > 0" >
+
+    <mat-form-field>
+      <mat-label>Filtrar</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex: Nome" #input>
+    </mat-form-field>
+
+    <div class="mat-elevation-z8">
+
+      <table mat-table [dataSource]="dataSource" matSort>
+        <!-- Column Codigo -->
+        <ng-container matColumnDef="codigo">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Código </th>
+          <td mat-cell *matCellDef="let element"> {{element.codigo}} </td>
+        </ng-container>
+
+        <!-- Column Nome -->
+        <ng-container matColumnDef="descricao">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Descrição </th>
+          <td mat-cell *matCellDef="let element"> {{element.descricao}} </td>
+        </ng-container>
+
+        <!-- Column Login -->
+        <ng-container matColumnDef="categoria">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Função </th>
+          <td mat-cell *matCellDef="let element"> {{element.categoria}} </td>
+        </ng-container>
+
+         <!-- Column Senha -->
+        <ng-container matColumnDef="acoes">
+          <th mat-header-cell *matHeaderCellDef style="text-align: center;">Opção</th>
+          <td mat-cell *matCellDef="let element; let i = index" style="text-align: center;">
+            <a class="pointer" style="color: #1878b0" matTooltip="Consultar Função">
+              <mat-icon>search</mat-icon>
+            </a>
+
+            <a class="pointer" style="color: #1f516f" matTooltip="Editar Função">
+              <mat-icon>edit</mat-icon>
+            </a>
+
+            <a class="pointer" (click)="apagarMedico(i)" style="color: #e15639" matTooltip="Apagar Função">
+              <mat-icon>delete</mat-icon>
+            </a>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Selecione a página"></mat-paginator>
+    </div>
+  </div>
+  <h2 *ngIf="listProdutos.length == 0">Não há Função cadastrada!</h2>
+</div>
+

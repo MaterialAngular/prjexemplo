@@ -1,0 +1,33 @@
+<div class="container">
+    <mat-toolbar>
+        <span>Cliente</span>
+    </mat-toolbar>
+</div>
+<div class="formulario-padrao">
+      <form [formGroup]="frmCliente" (ngSubmit)="OnSalvarCliente()">
+        <div class="form-group">
+          <label>Código</label>
+         <!-- <input type="text" formControlName="id" class="form-control"> -->
+        </div>
+
+        <div class="form-group">
+          <label>CPF:</label>
+          <input type="text" formControlName="cpf" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label>Nome:</label>
+          <input type="text" formControlName="nome" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label>Endereço:</label>
+          <input type="text" formControlName="endereco" class="form-control">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        <button type="submit" class="btn btn-default ml-2">Cancelar</button>
+      </form>
+    
+  </div>
+  <router-outlet></router-outlet>

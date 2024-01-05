@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+  <span>CEASA - Centro de Abastecimento</span>
+  <span class="example-spacer"></span>
+
+  <button mat-button *ngFor="let item of menuprincipal" [routerLink]="item.redirect">{{item.nome}}</button>
+
+  <span class="example-spacer"></span>
+
+  <button mat-icon-button routerLink="/logout" fontIcon="logout" aria-label="logout">
+    <mat-icon>logout</mat-icon>
+  </button>
+
+</mat-toolbar>
+
+
